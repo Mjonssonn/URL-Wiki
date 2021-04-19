@@ -1,4 +1,4 @@
-package com.urlwiki.entities;
+package com.urlwiki.controller;
 
 public class UserController {
 

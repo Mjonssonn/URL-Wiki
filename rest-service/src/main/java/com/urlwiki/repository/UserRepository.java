@@ -1,4 +1,4 @@
-package com.urlwiki.entities;
+package com.urlwiki.repository;
 
 public class UserRepository {
 
