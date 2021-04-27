@@ -1,37 +1,28 @@
 package com.urlwiki.controller;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 public class UserController {
 	
+	@RestController
+	@RequestMapping
+	
 	public UserController() {
-		public UserController(int id; String firstName; String lastName) {
-			this.id= id;
-			this.firstName= firstName;
-			this.lastName= lastName;
-		}
+		@PostMapping()
+		public String createUser()}
+	return "HTTP User created successfully";
+	
+	    @PostMapping() 
+	    public String writeComment()}
+    return "HTTP Comment was posted";
+    
+        @PostMapping()
+        public String giveLike()}
+    return "HTTP Like was given";
+	
+	
+	}
 		
 	}
-	
-	private int id;
-	private String firstName;
-	private String lastName;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
-
-}
