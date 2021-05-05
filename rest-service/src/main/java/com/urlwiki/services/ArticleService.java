@@ -1,57 +1,32 @@
 package com.urlwiki.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.urlwiki.repositories.ArticleRepository;
 
-@RestController
-@RequestMapping 
+
+@Service
 public class ArticleService {
 	
-	
-	
-	@GetMapping("/find-article")
-	public String findArticle() {
-		return "HTTP article was searched found";
-	}
-	
-	@GetMapping()
-	public String searchArticle() {
-		return "HTTP article was searched for";
+	@Autowired 
+	ArticleRepository articleRepo;
 
-	}
+//	public Article findArticle() {
+//		return articleRepo.findArticle();
+//		
+//	}
 	
-	
-	@GetMapping()
-	public String readArticle() {
-		return "HTTP article was read";
-
-	}
-	
-	
-	@PostMapping()
 	public String addArticle() {
-		return "HTTP article was added";
+		
+		return "" ;
+	}
+
+	public String readArticle() {
+		return "read article";
 	}
 	
-	
-	@PutMapping()
-	public String updateArticle() {
-		return "HTTP article was updated";
-	}
-	
-	
-	@DeleteMapping()
 	public String deleteArticle() {
-		return "HTTP article was deleted";
+		return "delete article";
 	}
-	
-	
-	
-
 }
-

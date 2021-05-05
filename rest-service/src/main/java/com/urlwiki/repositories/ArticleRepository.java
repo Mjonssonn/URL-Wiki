@@ -1,4 +1,4 @@
-package com.urlwiki.repository;
+package com.urlwiki.repositories;
 
 public class ArticleRepository {
 
