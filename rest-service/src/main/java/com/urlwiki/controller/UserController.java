@@ -19,13 +19,6 @@ import com.urlwiki.entities.User;
 public class UserController {
 	
 
-<<<<<<< Updated upstream
-=======
-	//@Autowired
-	//private UserService userservice;
-	
-	
->>>>>>> Stashed changes
 	Map<Integer, User> users = new HashMap<Integer, User>();
 
 	@GetMapping("/")

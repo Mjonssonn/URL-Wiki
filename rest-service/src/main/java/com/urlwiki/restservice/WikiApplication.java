@@ -4,17 +4,9 @@ import java.util.Collections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-<<<<<<< Updated upstream
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@ComponentScan({"com.urlwiki.controller", "com.urlwiki.repositories", "com.urlwiki.restservices", "com.urlwiki.services", "com.urlwiki.domain"})
-@EntityScan("com.urlwiki.domain")
-=======
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -26,7 +18,6 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @SpringBootApplication
 @EnableSwagger2
 @ComponentScan({"com.urlwiki.controller", "com.urlwiki.repositories", "com.urlwiki.services"})
->>>>>>> Stashed changes
 public class WikiApplication {
 
 	public static void main(String[] args) {
