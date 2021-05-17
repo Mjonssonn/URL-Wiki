@@ -1,9 +1,9 @@
 package com.urlwiki.entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.Column;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -17,18 +17,18 @@ public class User {
 	
 	
 	@ApiModelProperty(notes = "Unique ID of a user")
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(name = "id")
 	private int id;
 	
 	@ApiModelProperty(notes = "FirstName of the user")
-	@Column(name = "first_name")
+	//@Column(name = "first_name")
 	private String firstName;
 	
 	
 	@ApiModelProperty(notes = "LastName of the user")
-	@Column(name = "last_name")
+	//@Column(name = "last_name")
 	private String lastName;
 	
 	public User() {

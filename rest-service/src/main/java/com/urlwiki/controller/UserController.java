@@ -1,9 +1,7 @@
 package com.urlwiki.controller;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,30 +14,46 @@ import com.urlwiki.entities.User;
 import com.urlwiki.services.UserService;
 
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/api/users/")
 public class UserController {
 	
+	@Autowired
 	public UserService userService;
 
-	Map<Integer, User> users = new HashMap<Integer, User>();
-
-	@ApiModelProperty(notes ="Get all users from database")
 	@GetMapping("/")
+	@ApiOperation(
+			value = "Get all users", 
+			notes = "Get all users from database",
+			response = User.class,
+			responseContainer = "List")
 	public Collection<User> getAll() {
 		return userService.getAll();
 		
 	}
-	@ApiModelProperty(notes ="Get all users from database by ID")
+	
 	@GetMapping("/{id}")
-	public User getById(@PathVariable int id) {
+	@ApiOperation(
+			value = "Get user by ID", 
+			notes = "Get users from database by ID",
+			response = User.class,
+			responseContainer = "List")
+	public User getById(@ApiParam(value = "User ID", required = true) @PathVariable int id) {
 		return userService.getById(id);
 	}
 
 	@ApiModelProperty(notes ="Add a new user to Database")
 	@PostMapping("/")
-	public User addNewUser(@RequestBody User user) {
+	@ApiOperation(
+			value = "Add user to database", 
+			notes = "Adds a new user to the database",
+			response = User.class,
+			responseContainer = "List")
+	public User addNewUser(@ApiParam(value = "First Name, Last Name and ID ", required = true)
+	@RequestBody User user) {
 		return userService.addNewUser(user);
 	}
 	
