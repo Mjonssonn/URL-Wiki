@@ -1,8 +1,10 @@
 package com.urlwiki.services;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.urlwiki.entities.Article;
 import com.urlwiki.repositories.ArticleRepository;
 
 
@@ -12,21 +14,20 @@ public class ArticleService {
 	@Autowired 
 	ArticleRepository articleRepo;
 
-//	public Article findArticle() {
-//		return articleRepo.findArticle();
-//		
-//	}
+	public Collection<Article> getAll() {
+		return articleRepo.getAll();
+	}
 	
-	public String addArticle() {
-		
-		return "" ;
+	public Article findArticle(int id) {
+		return articleRepo.findArticle(id);
+	}
+	
+	public Article addNewArticle(Article article) {
+		return articleRepo.addNewArticle(article);
+	}
+	
+	public void deleteArticle(int id) {
+		articleRepo.deleteArticle(id);
 	}
 
-	public String readArticle() {
-		return "read article";
-	}
-	
-	public String deleteArticle() {
-		return "delete article";
-	}
 }
