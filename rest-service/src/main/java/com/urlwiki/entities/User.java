@@ -1,5 +1,10 @@
 package com.urlwiki.entities;
 
+import javax.persistence.Entity;
+
+@Entity
+
+
 public class User {
 
 	private int id;
