@@ -13,43 +13,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.urlwiki.entities.User;
+import com.urlwiki.services.UserService;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @RestController
 @RequestMapping("/api/users/")
 public class UserController {
 	
+	public UserService userService;
 
 	Map<Integer, User> users = new HashMap<Integer, User>();
 
+	@ApiModelProperty(notes ="Get all users from database")
 	@GetMapping("/")
 	public Collection<User> getAll() {
-		return users.values();
+		return userService.getAll();
 		
 	}
 	
 	@GetMapping("/{id}")
 	public User getById(@PathVariable int id) {
-		return users.get(id);
+		return userService.getById(id);
 	}
 
 	@PostMapping("/")
 	public User addNewUser(@RequestBody User user) {
-		users.put(user.getId(), user);
-		return user;
+		return userService.addNewUser(user);
 	}
 	
 	@PutMapping("/{id}")
 	public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
-		
-		User user = users.get(id);
-		user.setFirstName(updatedUser.getFirstName());
-		user.setLastName(updatedUser.getLastName());
-		return user;
+		return userService.updateUser(id, updatedUser);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable int id) {
-		users.remove(id);     
+		userService.deleteUser(id);
 	} 
 	
 }
