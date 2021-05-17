@@ -31,22 +31,25 @@ public class UserController {
 		return userService.getAll();
 		
 	}
-	
+	@ApiModelProperty(notes ="Get all users from database by ID")
 	@GetMapping("/{id}")
 	public User getById(@PathVariable int id) {
 		return userService.getById(id);
 	}
 
+	@ApiModelProperty(notes ="Add a new user to Database")
 	@PostMapping("/")
 	public User addNewUser(@RequestBody User user) {
 		return userService.addNewUser(user);
 	}
 	
+	@ApiModelProperty(notes ="Update an existing user in Database")
 	@PutMapping("/{id}")
 	public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
 		return userService.updateUser(id, updatedUser);
 	}
 	
+	@ApiModelProperty(notes ="Remove an existing user in Database")
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable int id) {
 		userService.deleteUser(id);
