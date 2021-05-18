@@ -2,6 +2,7 @@ package com.urlwiki.services;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.urlwiki.entities.Article;
 import com.urlwiki.repositories.ArticleSqlRepository;
@@ -14,7 +15,8 @@ public class ArticleService {
 	private ArticleSqlRepository articleRepo;
 
 	public Collection<Article> getAll() {
-		return articleRepo.findAll();
+		Sort sort = Sort.by(Sort.Direction.ASC, "category", "subCategory", "websiteName");
+		return articleRepo.findAll(sort);
 	}
 	
 	public Article findArticle(int id) {
