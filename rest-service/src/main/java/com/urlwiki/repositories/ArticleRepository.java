@@ -33,9 +33,9 @@ public class ArticleRepository {
 	}
 	
 	
-//	public Article updateArticle(int id, Article updateArticle) {
-//		return article;
-//	}
+	public Article updateArticle(int id, Article updateArticle) {
+		return articles.replace(id, updateArticle);
+	}
 	
 	public void deleteArticle( int id) {
 		articles.remove(id);

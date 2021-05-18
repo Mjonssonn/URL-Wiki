@@ -17,7 +17,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan({"com.urlwiki.controller", "com.urlwiki.repositories", "com.urlwiki.services", "com.urlwiki.requests"})
+@ComponentScan({"com.urlwiki.controller", "com.urlwiki.repositories", "com.urlwiki.services"})
 public class WikiApplication {
 
 	public static void main(String[] args) {

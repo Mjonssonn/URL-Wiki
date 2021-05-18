@@ -2,6 +2,7 @@ package com.urlwiki.services;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.urlwiki.entities.User;
@@ -9,6 +10,8 @@ import com.urlwiki.repositories.UserRepository;
 
 @Service
 public class UserService {
+	
+	@Autowired
 	UserRepository userRepo; 
 	
 
