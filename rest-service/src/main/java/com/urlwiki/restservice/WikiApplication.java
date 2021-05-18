@@ -20,7 +20,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableSwagger2
 @EntityScan("com.urlwiki.entities")
 @EnableJpaRepositories("com.urlwiki.repositories")
-@ComponentScan({"com.urlwiki.controller", "com.urlwiki.services"})
+@ComponentScan({"com.urlwiki.controller", "com.urlwiki.services", "com.urlwiki.aop"})
 public class WikiApplication {
 
 	public static void main(String[] args) {

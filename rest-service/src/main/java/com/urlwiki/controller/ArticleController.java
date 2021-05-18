@@ -4,9 +4,12 @@ import com.urlwiki.entities.Article;
 import com.urlwiki.services.ArticleService;
 
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Collection;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/article/")
+@RequiredArgsConstructor
+@RequestMapping("/api/articles/")
 public class ArticleController {
 		
-	@Autowired
-	private ArticleService articleService;	
+	
+	Logger logger = LoggerFactory.getLogger(ArticleController.class);
+
+	private final ArticleService articleService;	
 	
 	@GetMapping("/")
 	@ApiOperation(
