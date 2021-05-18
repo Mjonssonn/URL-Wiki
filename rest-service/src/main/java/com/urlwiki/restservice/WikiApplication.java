@@ -4,8 +4,9 @@ import java.util.Collections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
-
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -17,7 +18,9 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan({"com.urlwiki.controller", "com.urlwiki.repositories", "com.urlwiki.services"})
+@EntityScan("com.urlwiki.entities")
+@EnableJpaRepositories("com.urlwiki.repositories")
+@ComponentScan({"com.urlwiki.controller", "com.urlwiki.services"})
 public class WikiApplication {
 
 	public static void main(String[] args) {

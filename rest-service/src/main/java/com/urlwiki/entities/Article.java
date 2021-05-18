@@ -1,29 +1,69 @@
 package com.urlwiki.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
-public class Article {
+@ApiModel(description = "Add new URL request model")				// Note for Swagger UI
+@Getter																// Lombok Getter
+@Setter																// Lombok Setter
+@Entity																// Lets SQL know this is an entity
+@Table(name = "API_article")										// Table name in SQL
+public class Article {												// Article class
 
 	
 
-	@ApiModelProperty(notes = "Unique ID of an article")
-	private int id;
+	@ApiModelProperty(notes = "Unique ID of an article")			// Article ID -- Note for Swagger UI
+	@Id																// Lets SQL know this is an ID
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 			// (1,1) SQL
+	@Column(name = "id")
+	private int id;													
 	
-	@ApiModelProperty(notes = "Article website name")
-	private String websiteName;
+	@ApiModelProperty(notes = "Article website name")				// Article website name
+	@Column(name = "websiteName")
+	private String websiteName;										
 	
-	@ApiModelProperty(notes = "Category of an article")
-	private String category;
+	@ApiModelProperty(notes = "Category of an article")				// Article category
+	@Column(name = "category")
+	private String category;										
 	
-	@ApiModelProperty(notes = "Subcategory of an article")
-	private String subCategory;
+	@ApiModelProperty(notes = "Subcategory of an article")			// Article subcategory
+	@Column(name = "subCategory")
+	private String subCategory;										
+	@ApiModelProperty(notes = "Information about the article")		// Article information
+	@Column(name = "articleInfo")
+	private String articleInfo;										
 	
-	@ApiModelProperty(notes = "Information about the article")
-	private String articleInfo;
+	@ApiModelProperty(notes = "The article URL")					// Article URL
+	@Column(name = "url")											
+	private String url;												
 	
-	@ApiModelProperty(notes = "The article URL")
-	private String url;
 	
+	// Article method
+	public Article() {
+		
+	}
+	
+	// Article constructor
+	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
+		super();
+		this.id = id;
+		this.websiteName = websiteName;
+		this.category = category;
+		this.subCategory = subCategory;
+		this.articleInfo = articleInfo;
+		this.url = url;
+	}
+	
+	// Getters and setters for Article 
 	public int getId() {
 		return id;
 	}
@@ -61,15 +101,7 @@ public class Article {
 		this.url = url;
 	}
 
-	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
-		super();
-		this.id = id;
-		this.websiteName = websiteName;
-		this.category = category;
-		this.subCategory = subCategory;
-		this.articleInfo = articleInfo;
-		this.url = url;
-	}
+
 	
 	
 	
