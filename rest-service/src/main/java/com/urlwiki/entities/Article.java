@@ -1,25 +1,51 @@
 package com.urlwiki.entities;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class Article {
+	
+	@ApiModelProperty(notes="Unique Id of an article")
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name="id")
+	public int id;
+	
+	@ApiModelProperty(notes= "Article website name")
+	@Column(name="website_name")
+	public String websiteName;
+	
+	@ApiModelProperty(notes="Category of an article")
+	@Column(name="category")
+	public String category;
+	
+	@ApiModelProperty(notes="Subcategory of an article")
+	@Column(name="sub_category")
+	public String subCategory;
+	
+	@ApiModelProperty(notes="Information about an article")
+	@Column(name="article_info")
+	public String articleInfo;
+	
+	@ApiModelProperty(notes="The article url")
+	@Column(name="url")
+	public String url;
+	
 
-	
 	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
-		super();
-		this.id = id;
-		this.websiteName = websiteName;
-		this.category = category;
-		this.subCategory = subCategory;
-		this.articleInfo = articleInfo;
-		this.url = url;
-	}
+			super();
+			this.id = id;
+			this.websiteName = websiteName;
+			this.category = category;
+			this.subCategory = subCategory;
+			this.articleInfo = articleInfo;
+			this.url = url;
+		}
 	
-	private int id;
-	private String websiteName;
-	private String category;
-	private String subCategory;
-	private String articleInfo;
-	private String url;
 	
 	public int getId() {
 		return id;

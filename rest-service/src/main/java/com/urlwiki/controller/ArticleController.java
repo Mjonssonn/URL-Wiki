@@ -3,9 +3,16 @@ package com.urlwiki.controller;
 import com.urlwiki.entities.Article;
 import com.urlwiki.services.ArticleService;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/article/")
+
+
 public class ArticleController {
 		
 	@Autowired
