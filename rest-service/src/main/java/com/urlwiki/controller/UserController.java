@@ -59,7 +59,7 @@ public class UserController {
 			notes = "Get users from database by ID",
 			response = User.class,
 			responseContainer = "List")
-	public User getById(@ApiParam(value = "id", required = true) @PathVariable int id) {
+	public User getById(@ApiParam(value = "id", required = true) @PathVariable long id) {
 		User response = userService.getById(id);
 		 
 		if (response == null) {

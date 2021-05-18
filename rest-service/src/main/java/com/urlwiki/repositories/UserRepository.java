@@ -15,7 +15,7 @@ import lombok.Data;
 public class UserRepository {
 	
 	
-	Map<Integer, User> users = new HashMap<Integer, User>();
+	Map<Long, User> users = new HashMap<Long, User>();
 	
 
 	public Collection<User> getAll() {
@@ -24,7 +24,7 @@ public class UserRepository {
 	}
 	
 
-	public User getById( int id) {
+	public User getById(long id) {
 		return users.get(id);
 	}
 
@@ -35,7 +35,7 @@ public class UserRepository {
 	}
 	
 
-	public User updateUser(int id, User updatedUser) {
+	public User updateUser(long id, User updatedUser) {
 		
 		User user = users.get(id);
 		user.setFirstName(updatedUser.getFirstName());
@@ -44,7 +44,7 @@ public class UserRepository {
 	}
 	
 
-	public void deleteUser(int id) {
+	public void deleteUser(long id) {
 		users.remove(id);     
 	} 
 	

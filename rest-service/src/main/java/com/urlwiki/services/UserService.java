@@ -24,7 +24,7 @@ public class UserService {
 	}
 
 	
-	public User getById(int id) {
+	public User getById(long id) {
 		return userRepo.findById(id).get();
 		
 	}
@@ -34,14 +34,14 @@ public class UserService {
 		return userRepo.save(user);
 	}
 
-	public User updateUser(int id, User updateUser) {
+	public User updateUser(long id, User updateUser) {
 		User user = new User();
 		user = userRepo.findById(id).get();
 		logger.info("User was updated" + updateUser);
 		return userRepo.save(user);
 	}
 	
-	public void deleteUser(int id) {
+	public void deleteUser(long id) {
 		try {
 			userRepo.deleteById(id);
 			logger.info("Deleted user with id: " + id);

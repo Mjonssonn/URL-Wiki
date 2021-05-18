@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.urlwiki.entities.User;
 
 @Repository
-public interface UserSqlRepository extends JpaRepository<User, Integer>{
+public interface UserSqlRepository extends JpaRepository<User, Long>{
 
 	
 	

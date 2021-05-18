@@ -27,7 +27,7 @@ public class User {											// User class
 	@Id														// Lets SQL know this is an ID
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 	// (1,1) SQL
 	@Column(name = "id")									// Column name in SQL
-	private int id;											
+	private long id;											
 	
 	@ApiModelProperty(notes = "FirstName of the user")		// User first name
 	@Column(name = "firstName")								
@@ -45,7 +45,7 @@ public class User {											// User class
 	
 
 	// User constructor
-	public User(int id, String firstName, String lastName) {
+	public User(long id, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -54,11 +54,11 @@ public class User {											// User class
 
 	
 	// Getters and setters for User called upon in the UserService class
-	public int getId() {
+	public long getId() {
 		return id;
 	}  
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

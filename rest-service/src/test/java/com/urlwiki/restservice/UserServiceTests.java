@@ -32,7 +32,7 @@ public class UserServiceTests {
 		user.setLastName("testet");
 		Optional<User> userMock = Optional.of((User) user);
 		
-		when(userRepo.findById(anyInt())).thenReturn(userMock);
+		when(userRepo.findById(anyLong())).thenReturn(userMock);
 		// ACT
 	}
 
