@@ -34,9 +34,9 @@ public class WikiApplication {
 
 	private ApiInfo apiDetails() {
 		return new ApiInfo("URL Wiki", "A small version wiki with urls for Java developers", "1.0", "Free to use",
-				new springfox.documentation.service.Contact("Gustaf Andersson", "https://getitnordic.se",
-						"gustaf.andersson@getitnordic.se"),
-				"API License", "https://getitnordic.se", Collections.emptyList());
+				new springfox.documentation.service.Contact("Alina & Mattias", "https://www.jensengymnasium.se/goteborg",
+						"grupp1@testmail.com"),
+				"API License", "https://www.jensengymnasium.se/goteborg", Collections.emptyList());
 	}
 	
 	

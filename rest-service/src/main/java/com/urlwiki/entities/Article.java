@@ -1,24 +1,27 @@
 package com.urlwiki.entities;
 
+import io.swagger.annotations.ApiModelProperty;
 
 public class Article {
 
 	
-	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
-		super();
-		this.id = id;
-		this.websiteName = websiteName;
-		this.category = category;
-		this.subCategory = subCategory;
-		this.articleInfo = articleInfo;
-		this.url = url;
-	}
-	
+
+	@ApiModelProperty(notes = "Unique ID of an article")
 	private int id;
+	
+	@ApiModelProperty(notes = "Article website name")
 	private String websiteName;
+	
+	@ApiModelProperty(notes = "Category of an article")
 	private String category;
+	
+	@ApiModelProperty(notes = "Subcategory of an article")
 	private String subCategory;
+	
+	@ApiModelProperty(notes = "Information about the article")
 	private String articleInfo;
+	
+	@ApiModelProperty(notes = "The article URL")
 	private String url;
 	
 	public int getId() {
@@ -58,6 +61,15 @@ public class Article {
 		this.url = url;
 	}
 
+	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
+		super();
+		this.id = id;
+		this.websiteName = websiteName;
+		this.category = category;
+		this.subCategory = subCategory;
+		this.articleInfo = articleInfo;
+		this.url = url;
+	}
 	
 	
 	

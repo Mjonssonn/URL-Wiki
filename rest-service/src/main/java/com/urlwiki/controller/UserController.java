@@ -59,12 +59,22 @@ public class UserController {
 	
 	@ApiModelProperty(notes ="Update an existing user in Database")
 	@PutMapping("/{id}")
+	@ApiOperation(
+			value = "Update user", 
+			notes = "Update an user in the database",
+			response = User.class,
+			responseContainer = "List")
 	public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
 		return userService.updateUser(id, updatedUser);
 	}
 	
 	@ApiModelProperty(notes ="Remove an existing user in Database")
 	@DeleteMapping("/{id}")
+	@ApiOperation(
+			value = "Delete user", 
+			notes = "Delete an user from the database",
+			response = User.class,
+			responseContainer = "List")
 	public void deleteUser(@PathVariable int id) {
 		userService.deleteUser(id);
 	} 
