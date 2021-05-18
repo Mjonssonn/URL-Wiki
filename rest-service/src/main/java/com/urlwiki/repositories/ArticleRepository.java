@@ -17,13 +17,13 @@ public class ArticleRepository {
 	
 	ArticleService articleService;
 
-	Map<Integer, Article> articles = new HashMap<Integer, Article>();
+	Map<Long, Article> articles = new HashMap<Long, Article>();
 
 	public Collection<Article> getAll() {
 		return articles.values();
 	}
 	
-	public Article findArticle(int id) {
+	public Article findArticle(long id) {
 		return articles.get(id);
 	}
 	
@@ -33,11 +33,11 @@ public class ArticleRepository {
 	}
 	
 	
-	public Article updateArticle(int id, Article updateArticle) {
+	public Article updateArticle(long id, Article updateArticle) {
 		return articles.replace(id, updateArticle);
 	}
 	
-	public void deleteArticle( int id) {
+	public void deleteArticle(long id) {
 		articles.remove(id);
 	}
 	

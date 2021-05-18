@@ -24,7 +24,7 @@ public class UserRepository {
 	}
 	
 
-	public User getById(long id) {
+	public final User getById(long id) {
 		return users.get(id);
 	}
 

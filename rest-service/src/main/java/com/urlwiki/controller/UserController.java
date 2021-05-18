@@ -89,7 +89,7 @@ public class UserController {
 			notes = "Update an user in the database",
 			response = User.class,
 			responseContainer = "List")
-	public User updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+	public User updateUser(@PathVariable long id, @RequestBody User updatedUser) {
 		return userService.updateUser(id, updatedUser);
 	}
 	
@@ -100,7 +100,7 @@ public class UserController {
 			notes = "Delete an user from the database",
 			response = User.class,
 			responseContainer = "List")
-	public void deleteUser(@PathVariable int id) {
+	public void deleteUser(@PathVariable long id) {
 		userService.deleteUser(id);
 	} 
 	

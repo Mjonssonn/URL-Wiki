@@ -25,7 +25,7 @@ public class Article {												// Article class
 	@Id																// Lets SQL know this is an ID
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 			// (1,1) SQL
 	@Column(name = "id")
-	private int id;													
+	private long id;													
 	
 	@ApiModelProperty(notes = "Article website name")				// Article website name
 	@Column(name = "websiteName")
@@ -53,7 +53,7 @@ public class Article {												// Article class
 	}
 	
 	// Article constructor
-	public Article(int id, String websiteName, String category, String subCategory, String articleInfo, String url) {
+	public Article(long id, String websiteName, String category, String subCategory, String articleInfo, String url) {
 		super();
 		this.id = id;
 		this.websiteName = websiteName;
@@ -64,10 +64,10 @@ public class Article {												// Article class
 	}
 	
 	// Getters and setters for Article 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getWebsiteName() {
